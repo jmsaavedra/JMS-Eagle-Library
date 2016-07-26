@@ -1,7 +1,7 @@
 [jos.ph](http://jos.ph) Eagle CAD Libraries
 =================
 
-EagleCAD library of parts and footprints I couldn't find anywhere else. Many of these are literally footprints with pinouts for integrating Adafruit breakout boards into your PCB.
+[EagleCAD](https://cadsoft.io) library of parts and footprints I couldn't find anywhere else. Many of these are literally footprints with pinouts for integrating Adafruit breakout boards into your PCB.
 
 __Note__: These have been created for various projects over the past few years, they are not the most consistent in terms of silk/labeling design. However, they are all proven unless marked otherwise.
 
@@ -66,7 +66,7 @@ Older eagle library with parts from the past...
 
 
 ## Installation
-_forked from on instructions [here](https://github.com/adafruit/Adafruit-Eagle-Library)_
+_forked from instructions [here](https://github.com/adafruit/Adafruit-Eagle-Library)_
 
 1. Download the .zip file of this repo.
 2. Open Eagle and select the `Control Panel` window.
