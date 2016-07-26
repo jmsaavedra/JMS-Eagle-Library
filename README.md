@@ -79,10 +79,11 @@ _forked from on instructions [here](https://github.com/adafruit/Adafruit-Eagle-L
 5. Click `OK` to save your changes.
 6. Eagle will prompt to create the directory if it does not already exist. Note
 the location and choose `Yes` to create the directory.
-```
-    `$HOME/my_external_lbrs` changes to: /Users/mosfet/my_external_lbrs/
-    `$HOME\my_external_lbrs` changes to: C:\Users\Mosfet\Documents\my_external_lbrs
-```
+
+    OSX: `$HOME/my_external_lbrs` changes to: `/Users/mosfet/my_external_lbrs/`
+
+    Windows: `$HOME\my_external_lbrs` changes to: `C:\Users\Mosfet\Documents\my_external_lbrs`
+
 7. Find and open the `my_external_lbrs` folder. Unzip the downloaded file and drag `jos-ph.lbr` into the
    new `my_external_lbrs` folder.
 8. Restart Eagle. The library should be now be usable.
