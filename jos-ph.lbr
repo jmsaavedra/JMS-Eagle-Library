@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.4.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -14,8 +14,8 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="no" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
@@ -491,7 +491,7 @@ https://www.simblee.com/</description>
 <text x="-14.605" y="8.255" size="0.889" layer="21" rot="R90">HV</text>
 <text x="-1.905" y="7.62" size="0.889" layer="21" rot="R90">GND</text>
 </package>
-<package name="APA102">
+<package name="APA102_5050">
 <description>APA102 RGB LED</description>
 <wire x1="2.5" y1="-2.5" x2="-2.5" y2="-2.5" width="0.127" layer="21"/>
 <wire x1="-2.5" y1="-2.5" x2="-2.5" y2="1.5" width="0.127" layer="21"/>
@@ -508,7 +508,30 @@ https://www.simblee.com/</description>
 <smd name="4" x="-2" y="1.7" dx="2" dy="1.1" layer="1" rot="R180"/>
 <smd name="5" x="-2" y="0" dx="2" dy="1.1" layer="1" rot="R180"/>
 <smd name="6" x="-2" y="-1.7" dx="2" dy="1.1" layer="1" rot="R180"/>
-<text x="1.7" y="-2.9" size="1.27" layer="25" font="vector" rot="R180">&gt;NAME</text>
+<text x="0" y="-3" size="1.27" layer="25" font="vector" rot="R180" align="bottom-center">&gt;NAME</text>
+</package>
+<package name="APA102_2020">
+<wire x1="0" y1="0" x2="2" y2="0" width="0.05" layer="21"/>
+<wire x1="2" y1="0" x2="2" y2="2" width="0.05" layer="21"/>
+<wire x1="2" y1="2" x2="0" y2="2" width="0.05" layer="21"/>
+<wire x1="0" y1="2" x2="0" y2="0" width="0.05" layer="21"/>
+<smd name="D_IN" x="0.25" y="1.825" dx="0.6" dy="0.35" layer="1"/>
+<smd name="D_OUT" x="1.75" y="1.825" dx="0.6" dy="0.35" layer="1"/>
+<smd name="GND" x="0.25" y="0.175" dx="0.6" dy="0.35" layer="1"/>
+<smd name="V_CC" x="1.75" y="0.175" dx="0.6" dy="0.35" layer="1"/>
+<smd name="C_IN" x="0.25" y="1" dx="0.6" dy="0.5" layer="1"/>
+<smd name="CL_OUT" x="1.75" y="1" dx="0.6" dy="0.5" layer="1"/>
+<text x="-0.05" y="1.825" size="0.5" layer="25" align="center-right">D_IN</text>
+<text x="-0.05" y="1" size="0.5" layer="25" align="center-right">CL_IN</text>
+<text x="-0.05" y="0.15" size="0.5" layer="25" align="center-right">GND</text>
+<text x="2.05" y="1.775" size="0.5" layer="25" align="center-left">D_OUT</text>
+<text x="2.05" y="1" size="0.5" layer="25" align="center-left">CL_OUT</text>
+<text x="2.1" y="0.2" size="0.5" layer="25" align="center-left">5V</text>
+<polygon width="0.05" layer="21" spacing="0.01" pour="hatch">
+<vertex x="0.1" y="2.1"/>
+<vertex x="-0.1" y="1.9"/>
+<vertex x="-0.1" y="2.1"/>
+</polygon>
 </package>
 </packages>
 <symbols>
@@ -1003,7 +1026,7 @@ Datasheet: https://cdn-shop.adafruit.com/product-files/2343/APA102C.pdf</descrip
 <gate name="G$1" symbol="APA102" x="-5.08" y="0"/>
 </gates>
 <devices>
-<device name="" package="APA102">
+<device name="5050" package="APA102_5050">
 <connects>
 <connect gate="G$1" pin="CI" pad="5"/>
 <connect gate="G$1" pin="CO" pad="2"/>
@@ -1011,6 +1034,19 @@ Datasheet: https://cdn-shop.adafruit.com/product-files/2343/APA102C.pdf</descrip
 <connect gate="G$1" pin="DO" pad="3"/>
 <connect gate="G$1" pin="GND" pad="6"/>
 <connect gate="G$1" pin="VCC" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="2020" package="APA102_2020">
+<connects>
+<connect gate="G$1" pin="CI" pad="C_IN"/>
+<connect gate="G$1" pin="CO" pad="CL_OUT"/>
+<connect gate="G$1" pin="DI" pad="D_IN"/>
+<connect gate="G$1" pin="DO" pad="D_OUT"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="VCC" pad="V_CC"/>
 </connects>
 <technologies>
 <technology name=""/>
